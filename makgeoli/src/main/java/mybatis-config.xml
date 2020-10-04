@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- Alias 설정 -->
+	<typeAliases>
+		<typeAlias alias="board" type="com.javassem.domain.BoardVO" />	
+		<typeAlias alias="customer" type="com.javassem.domain.CustomerVO"/>	
+		<typeAlias alias="question" type="com.javassem.domain.QuestionVO"/>	
+		<typeAlias alias="product" type="com.javassem.domain.ProductVO"/>
+		<typeAlias alias="cart" type="com.javassem.domain.CartVO"/>		
+		<typeAlias alias="jumun" type="com.javassem.domain.JumunVO"/>	
+	</typeAliases>
+
+	<!-- Mapper 등록 : spring설정파일에 지정하여 여기엔 필요 없음 -->
+</configuration>
+

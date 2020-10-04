@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+
+.size img{
+   width: 50px;
+}
+
+
+.btnArea{width:980px;margin:30px auto;text-align:center;}
+.btnArea a{display:inline-block;width:150px;height:30px;line-height:28px;border:1px solid #ddd;}

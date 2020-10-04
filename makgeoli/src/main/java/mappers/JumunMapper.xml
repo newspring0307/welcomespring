@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jumun">
+
+	<insert id="insertJumun" parameterType="jumun">
+		<![CDATA[
+		INSERT INTO Jumun(Jumun_no,id,jumun_firstname,regdate,jumun_amount,jumun_sum)
+		VALUES(jumun_seq.nextval,#{id},#{jumunFirstName},sysdate,#{jumunAmount},#{jumunSum})
+		]]>
+	</insert>
+	
+	<select id="jumunList" parameterType="jumun" resultType="jumun">
+		<![CDATA[
+		SELECT Jumun_no AS jumunNo,
+				id,
+				jumun_firstname AS jumunFirstName,
+				regdate,
+				jumun_amount AS jumunAmount,
+				jumun_sum AS jumunSum
+			from jumun
+			where id=#{id}
+		]]>
+	</select>
+		<!-- 장바구니 전체 금액 -->
+	<select id="sumMoney" resultType="int">
+		<![CDATA[
+		select nvl(sum(product_price*Jumun_amount),0)money
+		from Jumun c, product p
+		WHERE c.product_id = p.product_id and c.id =#{id}
+		]]>
+	</select>
+	<!-- 장바구니 수정 -->
+	<update id="modifyJumun">
+		<![CDATA[
+		update Jumun
+		set Jumun_amount = #{jumunAmount}
+		WHERE id = #{id}
+		and product_id = #{productId}
+		]]>
+	</update>
+	  <!-- 장바구니 삭제 -->
+	<delete id="deleteJumun">
+		<![CDATA[
+		delete 
+		FROM Jumun
+		where Jumun_id = #{jumunId}
+		]]>
+	</delete>
+	<!-- 장바구니에 동일한 상품 레코드 확인 -->
+	<select id = "countJumun" resultType="int">
+		<![CDATA[
+		select count(*)
+		from Jumun
+		where id = #{id}
+		and product_id = #{productId}
+		]]>
+	</select>
+	<update id="updateJumun" parameterType="jumun">
+	<![CDATA[
+		update Jumun
+		set Jumun_amount = Jumun_amount + #{jumunAmount}
+		where id = #{id}
+		and product_id = #{productId}
+		]]>
+	</update>
+</mapper>

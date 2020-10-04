@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+    html, body, div, span, 
+    ul, li, form, label, button, input {
+        margin:0;
+        padding:0;
+        border:0;
+        outline:0;
+        font-size:100%;
+        vertical-align:baseline;
+        background:transparent;
+        color:#58595b;
+        box-sizing: border-box;
+        list-style: none;
+        font-family: 'HGGGOTHIC', sans-serif;
+    }
+
+    /* Handle on hover */
+
+    .inputhidden {
+    display:none;
+    }
+ 
+    input[type="text"] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    }
+
+    input, select, textarea {
+        vertical-align:middle;
+        box-sizing: border-box;
+        border:1px solid #ddd;
+        padding:7px;
+        font-size:18px;
+    }
+    img {
+    vertical-align: baseline;
+    }
+
+    button {
+    border:0;
+    cursor: pointer;
+    }
+  
+    .my_container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F6F6;
+    padding: 20px 10px;
+    }
+
+
+    .CustomerCenter_title {
+    height: 110px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+    border: solid 0.5px #BDBDBD;
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 46px;
+    margin-bottom: 30px;
+    }
+    .CustomerCenter_title > span {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 0.40;
+    color: #626262;
+    }
+
+    .my_wrapper.fnq {
+    box-shadow: none;
+    background: none;
+    }
+    .CustomerCenter_FAQ {
+    margin-bottom: 25px;
+    text-align: center;
+    }
+    .CustomerCenter_FAQ > span {
+    -webkit-text-stroke: 0.5px #58595b;
+    font-size: 14px;
+    line-height: 1.14;
+    }
+
+    .CustomerCenter_FAQ_kinds {
+    padding: 0 16px 0 16px;
+    display: flex;
+    margin-bottom: 23px;
+    text-align: center;
+    justify-content: space-between;
+    }
+    .CustomerCenter_FAQ_kinds > div {
+    font-size: 14px;
+    line-height: 1.14;
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+    }
+    .CustomerCenter_FAQ_list {
+    margin-bottom: 30px;
+    }
+    .CustomerCenter_FAQ_list > li {
+    width: 100%;
+    /* height: 55px; */
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
+    border: solid 0.5px #8C8C8C;
+    background-color: #ffffff;
+    position: relative;
+    Z-index: 1;
+    }
+    .CustomerCenter_FAQ_list > li > label {
+    height: 55px;
+    display: block;
+    padding: 20px 14px;
+    font-size: 14px;
+    line-height: 1.14;    
+    cursor: pointer;
+
+    }
+    .CustomerCenter_FAQ_Answer {
+    width: 100%;
+    padding: 19px 16px;
+    border: 0.5px solid #BDBDBD;
+    background-color: #efefef;
+    font-size: 14px;
+    line-height: 1.14;
+    z-index: 99;
+    }
+
+    .CustomerCenter_FAQ_list > li > div {
+    display: none;
+    }
+    .CustomerCenter_FAQ_list > li > input[type=radio]:checked ~ div {
+    display: block;
+    }
+
+    .OtherQuestion {
+    text-align: center;
+    margin-bottom: 10px;
+    }
+    .OtherQuestion > span {
+    font-weight: bold;
+    font-size: 19px;  
+    line-height: 1.14;
+    color: #5b5b5b;
+    }
+    .Question_btn {
+    display: flex;
+    justify-content: center;
+    }
+    .Question_btn > button {
+    width: 110px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 1.14;
+    }
+    .OneToOneQuestion_btn {
+    background-color: #BDBDBD;
+    color: #ffffff;
+    }

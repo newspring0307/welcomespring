@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="QuestionDAO">
+
+	<insert id="insertQuestion" parameterType="question">
+		<![CDATA[
+		INSERT INTO question(SEQ, ID, REGDATE, TITLE, CONTENT)
+		VALUES(question_seq.nextval,
+			#{id},sysdate, #{title},#{content} 
+			)
+		]]>
+	</insert>
+	
+	<update id="updateQuestion" parameterType="question">
+		<![CDATA[
+		UPDATE question SET
+		TITLE = #{title},
+		CONTENT = #{content}
+		WHERE SEQ = #{seq}
+		]]>
+	</update>
+	
+	<delete id="deleteQuestion" parameterType="question">
+		<![CDATA[
+		DELETE question
+		WHERE SEQ = #{seq}
+		]]>
+	</delete>
+	
+	<select id="getQuestion" parameterType="question" resultType="question">
+		<![CDATA[
+		SELECT *
+		FROM question
+		WHERE SEQ = #{seq}
+		]]>
+	</select>
+	  <!-- resultmap생각해보기 -->
+	<select id="getQuestionList" resultType="question">
+		<![CDATA[
+		SELECT *
+		FROM question
+		ORDER BY SEQ DESC
+		]]>
+	</select>
+</mapper>
